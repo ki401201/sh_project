@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>HOME</title>
+		<link rel="stylesheet" href="/css/main.css">
+	</head>
+	<body>
+		<div th:insert="~{fragments/header :: header}"></div>
+		<div th:insert="~{fragments/sidebar :: sidebar}"></div>
+		<div th:layout="content" id="content">
+			<h1 align="center">케이지 에듀원 사이트</h1>
+		</div>
+		<div th:insert="~{fragments/footer :: footer}"></div>
+	</body>
+</html>
