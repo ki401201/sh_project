@@ -1,0 +1,16 @@
+package com.test.pro06.common.advice;
+
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+import jakarta.servlet.http.HttpSession;
+
+@ControllerAdvice
+public class GlobalModelAttribute {
+	
+	@ModelAttribute("loginId")
+	public String loginId(HttpSession session) {
+		return (String) session.getAttribute("loginId");
+	}
+
+}
