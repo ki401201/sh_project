@@ -53,7 +53,7 @@ public class BoardControllerImpl implements BoardController {
 		for (MultipartFile file : files) {
 			if(!file.isEmpty()) {
 				String originalFileName = file.getOriginalFilename();
-				String saveDIR = FileController.FILE_REPO + "\\" + dto.getArticleNo();
+				String saveDIR = FileController.FILE_REPO + "/" + dto.getArticleNo();
 				
 				File dir = new File(saveDIR);
 				
