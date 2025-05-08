@@ -14,7 +14,7 @@ jobs:
             path: . 
     
         - name: Set up JDK21
-          uses: actions/setup -java@v3
+          uses: actions/setup-java@v3
           with: 
             java-version: '21'
             distribution: 'temurin'
@@ -22,7 +22,7 @@ jobs:
         - name: Make gradlew executable
           run: |
             cd pro06
-            chmod x./gradlew
+            chmod +x ./gradlew
     
         - name: Build with Gradle
           run: ./gradlew clean build -x test
@@ -30,8 +30,8 @@ jobs:
       
         - name: Rename JAR file
           run: | 
-            JAR_FILE=$(Is pro06/build/libs/*.jar|head-n1)
-            mv"$JAR_FILE" pro06/build/libs/myapp.jar
+            JAR_FILE=$(ls pro06/build/libs/*.jar | head -n 1)
+            mv "$JAR_FILE" pro06/build/libs/myapp.jar
         
         - name: Upload JAR to EC2
           uses: appleboy/scp-action@v0.1.7
